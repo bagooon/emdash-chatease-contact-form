@@ -3,6 +3,8 @@
 # ChatEase Contact Form for EmDash
 
 [![npm version](https://img.shields.io/npm/v/@bagooon/chatease-emdash-form.svg)](https://www.npmjs.com/package/@bagooon/chatease-emdash-form)
+[![CI](https://github.com/bagooon/emdash-chatease-contact-form/actions/workflows/ci.yml/badge.svg)](https://github.com/bagooon/emdash-chatease-contact-form/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ChatEase のチャットボードと連携できる、EmDash 用お問い合わせフォームプラグインです。
 
