@@ -1,8 +1,8 @@
 import { z } from 'zod';
 
 export const PLUGIN_ID = 'chatease-contact-form';
-export const PACKAGE_NAME = '@bagooon/chatease-emdash-plugin';
-export const VERSION = '0.2.0';
+export const PACKAGE_NAME = '@bagooon/chatease-emdash-form';
+export const VERSION = '0.2.1';
 export const API_PATH = `/_emdash/api/plugins/${PLUGIN_ID}`;
 
 const line = (max: number) => z.string().trim().max(max).refine(v => !/[\r\n\u0000]/u.test(v));

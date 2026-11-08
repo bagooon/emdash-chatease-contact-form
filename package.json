@@ -1,6 +1,6 @@
 {
-  "name": "@bagooon/chatease-emdash-plugin",
-  "version": "0.2.0",
+  "name": "@bagooon/chatease-emdash-form",
+  "version": "0.2.1",
   "description": "ChatEase contact forms for EmDash CMS",
   "type": "module",
   "license": "MIT",
@@ -10,7 +10,9 @@
   },
   "files": [
     "dist",
-    "src"
+    "src/astro",
+    "src/model.ts",
+    ".github/assets/chatease_logo.svg"
   ],
   "exports": {
     ".": {
@@ -20,11 +22,13 @@
     "./astro": "./src/astro/index.ts"
   },
   "scripts": {
-    "lint": "eslint src test",
+    "lint": "eslint src test scripts",
     "typecheck": "tsc --noEmit && astro check",
     "test": "vitest run",
-    "build": "tsc -p tsconfig.build.json",
-    "prepack": "npm run build"
+    "build": "node scripts/build.mjs",
+    "prepack": "npm run build",
+    "check:package": "npm run build && node scripts/check-package.mjs",
+    "prepublishOnly": "npm run lint && npm run typecheck && npm test && npm run check:package"
   },
   "dependencies": {
     "zod": "^4.6.6"
@@ -53,5 +57,26 @@
     "@typescript-eslint/typescript-estree": {
       "minimatch": "^11.0.1"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagooon/emdash-chatease-contact-form.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bagooon/emdash-chatease-contact-form/issues"
+  },
+  "homepage": "https://chatease.jp/",
+  "keywords": [
+    "chatease",
+    "emdash",
+    "astro",
+    "contact-form",
+    "cloudflare-workers"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
