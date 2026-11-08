@@ -1,0 +1,14 @@
+---
+interface Props {
+  node?: { formId?: string };
+  formId?: string;
+}
+const formId = Astro.props.formId ?? Astro.props.node?.formId ?? 'contact';
+---
+<chatease-contact-form data-form-id={formId}>
+  <p role="status">お問い合わせフォームを読み込んでいます。</p>
+  <noscript>お問い合わせフォームの利用にはJavaScriptを有効にしてください。</noscript>
+</chatease-contact-form>
+<script>
+  import './client.js';
+</script>
